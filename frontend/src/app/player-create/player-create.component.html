@@ -1,0 +1,19 @@
+<div class="container"> <h1>Add New Player</h1> <div class="row">
+  <div class="col-md-6">
+    <form (ngSubmit)="savePlayer()" #playerForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="player.name"
+               name="name" required> </div>
+      <div class="form-group">
+        <label for="name">Address</label>
+        <input type="text" class="form-control" [(ngModel)]="player.surname"
+               name="surname" required> </div>
+      <div class="form-group">
+        <label for="name">City</label>
+        <input type="text" class="form-control" [(ngModel)]="player.teamName"
+               name="teamName" required> </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" [disabled]="!playerForm.form.valid">Save</button>
+      </div> </form> </div>
+</div> </div>

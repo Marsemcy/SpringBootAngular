@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Edit Player</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="updatePlayer(player.id, player)" #playerForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="player.name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="surname">Surname</label>
+          <input type="text" class="form-control" [(ngModel)]="player.surname" name="address" required>
+        </div>
+        <div class="form-group">
+          <label for="teamName">Team name</label>
+          <input type="text" class="form-control" [(ngModel)]="player.teamName" name="teamName" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!playerForm.form.valid">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
