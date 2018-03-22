@@ -159,7 +159,7 @@ module.exports = ""
 /***/ "./src/app/player-create/player-create.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\"> <h1>Add New Player</h1> <div class=\"row\">\n  <div class=\"col-md-6\">\n    <form (ngSubmit)=\"savePlayer()\" #playerForm=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"name\">Name</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.name\"\n               name=\"name\" required> </div>\n      <div class=\"form-group\">\n        <label for=\"name\">Address</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.surname\"\n               name=\"surname\" required> </div>\n      <div class=\"form-group\">\n        <label for=\"name\">City</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.teamName\"\n               name=\"teamName\" required> </div>\n      <div class=\"form-group\">\n        <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!playerForm.form.valid\">Save</button>\n      </div> </form> </div>\n</div> </div>\n"
+module.exports = "<div class=\"container\"> <h1>Add New Player</h1> <div class=\"row\">\n  <div class=\"col-md-6\">\n    <form (ngSubmit)=\"savePlayer()\" #playerForm=\"ngForm\">\n      <div class=\"form-group\">\n        <label for=\"name\">Name</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.name\" id=\"name\"\n               name=\"name\" required> </div>\n      <div class=\"form-group\">\n        <label for=\"name\">Surname</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.surname\"\n               name=\"surname\" required> </div>\n      <div class=\"form-group\">\n        <label for=\"name\">Team Name</label>\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.teamName\"\n               name=\"teamName\" required> </div>\n      <div class=\"form-group\">\n        <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!playerForm.form.valid\">Save</button>\n      </div> </form> </div>\n</div> </div>\n"
 
 /***/ }),
 
@@ -195,7 +195,7 @@ var PlayerCreateComponent = /** @class */ (function () {
         var _this = this;
         this.http.post('/players', this.player)
             .subscribe(function (res) {
-            _this.router.navigate(['/player-detail', res]);
+            _this.router.navigate(['/player', res]);
         }, function (err) {
             console.log(err);
         });
@@ -298,7 +298,7 @@ module.exports = ""
 /***/ "./src/app/player-edit/player-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h1>Edit Player</h1>\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <form (ngSubmit)=\"updatePlayer(player.id, player)\" #playerForm=\"ngForm\">\n        <div class=\"form-group\">\n          <label for=\"name\">Name</label>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.name\" name=\"name\" required>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"surname\">Surname</label>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.surname\" name=\"address\" required>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"teamName\">Team name</label>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.teamName\" name=\"teamName\" required>\n        </div>\n        <div class=\"form-group\">\n          <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!playerForm.form.valid\">Update</button>\n        </div>\n      </form>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <h1>Edit Player</h1>\n  <div class=\"row\">\n    <div class=\"col-md-6\">\n      <form (ngSubmit)=\"updatePlayer(player.id, player)\" #playerForm=\"ngForm\">\n        <div class=\"form-group\">\n          <label for=\"name\">Name</label>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.name\" name=\"name\" id=\"name\" required>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"surname\">Surname</label>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.surname\" name=\"address\" required>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"teamName\">Team name</label>\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"player.teamName\" name=\"teamName\" required>\n        </div>\n        <div class=\"form-group\">\n          <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!playerForm.form.valid\">Update</button>\n        </div>\n      </form>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 

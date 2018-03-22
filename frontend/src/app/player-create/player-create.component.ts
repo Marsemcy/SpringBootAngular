@@ -20,7 +20,7 @@ export class PlayerCreateComponent implements OnInit {
   savePlayer() {
     this.http.post('/players', this.player)
       .subscribe(res => {
-          this.router.navigate(['/player-detail', res]);
+          this.router.navigate(['/player', res]);
         }, (err) => {
           console.log(err);
         }

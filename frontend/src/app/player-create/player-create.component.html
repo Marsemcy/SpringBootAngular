@@ -3,14 +3,14 @@
     <form (ngSubmit)="savePlayer()" #playerForm="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" [(ngModel)]="player.name"
+        <input type="text" class="form-control" [(ngModel)]="player.name" id="name"
                name="name" required> </div>
       <div class="form-group">
-        <label for="name">Address</label>
+        <label for="name">Surname</label>
         <input type="text" class="form-control" [(ngModel)]="player.surname"
                name="surname" required> </div>
       <div class="form-group">
-        <label for="name">City</label>
+        <label for="name">Team Name</label>
         <input type="text" class="form-control" [(ngModel)]="player.teamName"
                name="teamName" required> </div>
       <div class="form-group">
